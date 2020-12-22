@@ -6,9 +6,9 @@ export default function CriarConta({cadastrar}){
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
-    function handleSubmit () {
+    function handleSubmit (e) {
+        e.preventDefault();
         const user = {name, email}
-
         cadastrar(user);
         console.log("handleSubmit da classe CriarConta")
     }
@@ -24,11 +24,11 @@ export default function CriarConta({cadastrar}){
                             <form>
                                 <div className="form-group mb-2">
                                     <label htmlFor="nome">Nome:</label>
-                                    <input id="nome" className="form-control" onChange={(event)=>{setName(event.target.value)}} placeholder="Digite o Nome"/>
+                                    <input id="nome" className="form-control" onChange={(event)=>{setName(event.target.value)}} type="text" placeholder="Digite o Nome"/>
                                 </div>
                                 <div className="form-group mb-2">
                                     <label htmlFor="email">Email:</label>
-                                    <input id="email" className="form-control" onChange={(event)=>{setEmail(event.target.value)}} placeholder="Digite o Email"/>
+                                    <input id="email" className="form-control" onChange={(event)=>{setEmail(event.target.value)}} type="email" placeholder="Digite o Email"/>
                                 </div>
                                 <div className="form-group mb-2">
                                     <label htmlFor="cemail">Confirmar Email:</label>

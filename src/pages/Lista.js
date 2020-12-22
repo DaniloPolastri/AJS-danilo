@@ -4,14 +4,24 @@ export default function Lista({users}){
     return(
         <>
             <Header/>
-            <div className="text-center mt-5">
+            <table className="table text-center">
                 {users.map(user => {
                     return (
-                        <h1 className="display-1">{user.email}</h1>
+                        <>
+                            <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                            </tr>
+                        </>
                     )
                 })}
-
-            </div>
+            </table>
         </>
     );
 }

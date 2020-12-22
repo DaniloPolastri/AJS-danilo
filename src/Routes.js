@@ -15,8 +15,8 @@ export default function Routes ({users, cadastrar}){
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route  path="/login" component={Login}/>
-            <Route>
-                <CriarConta cadastrar={handleCadastrarUsuario}></CriarConta>
+            <Route path="/cadastrar">
+                <CriarConta  cadastrar={handleCadastrarUsuario}></CriarConta>
             </Route>
             <Route path="/listar">
                 <Lista users={users} />
